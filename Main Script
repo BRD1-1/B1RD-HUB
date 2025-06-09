@@ -11,6 +11,34 @@ local Window = library.NewWindow({
 })
 
 local Home = Window:AddTab("Home")
-local SettingsTab = library:CreateSettingsTab(Window)
 
 local Main = Home:AddSection("Main", 1)
+
+Main:AddToggle({
+    text = "Toggle 1",
+    state = false,
+    risky = true,
+    tooltip = "Tool tip 1",
+    flag = "Toggle1_Toggle",
+    risky = false,
+    callback = function(v)
+        print(ValueText, v)
+    end
+}):AddBind({
+    enabled = true,
+    text = "Keybind",
+    tooltip = "Tool tip 2",
+    mode = "toggle",
+    bind = "None",
+    flag = "Keybind_Keybind",
+    state = false,
+    nomouse = false,
+    risky = false,
+    noindicator = false,
+    callback = function(v)
+        print(ValueText, v)
+    end,
+    keycallback = function(v)
+        print(ValueText, v)
+    end
+})
