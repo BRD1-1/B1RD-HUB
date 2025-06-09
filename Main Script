@@ -11,6 +11,7 @@ local Window = library.NewWindow({
 })
 
 local Home = Window:AddTab("Home")
+local SettingsTab = library:CreateSettingsTab(Window)
 
 local Main = Home:AddSection("Main", 1)
 
